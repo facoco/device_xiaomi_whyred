@@ -22,10 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from whyred device
 $(call inherit-product, device/xiaomi/whyred/device.mk)
 
-# Inherit some common PixelExperience stuff.
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common AEX stuff.
+$(call inherit-product, vendor/aosp/common.mk)
+
+# Set Boot Animination Resolution
+TARGET_BOOT_ANIMATION_RES := 2140
 
 PRODUCT_NAME := aosp_whyred
 PRODUCT_BRAND := Xiaomi
@@ -43,3 +44,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "xiaomi/whyred/whyred:9/PKQ1.180904.001/V10.3.1.0.PEIMIXM:user/release-keys"
 
 TARGET_VENDOR := Xiaomi
+
+# Use Gcam and Jelly
+TARGET_USE_GCAM := true
+TARGET_USE_JELLY := true
